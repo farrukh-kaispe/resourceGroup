@@ -73,7 +73,7 @@
       {
 
         
-            "name": "[parameters('webAppName')",
+            "name": "[parameters('webAppName','/MsDeploy')",
             "type": "Microsoft.Web/sites/extensions",
             "location": "[resourceGroup().location]",
             "apiVersion": "2018-02-01",
