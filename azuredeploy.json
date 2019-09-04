@@ -74,9 +74,8 @@
 
         "name": "[concat(parameters('webAppName'),'/MSDeploy')]",
         "type": "Microsoft.Web/sites/extensions",
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "apiVersion": "2018-02-01",
-        "tags": "[parameters('tags')]",
         "properties": {
           "packageUri": "https://kspwebdeployment.blob.core.windows.net/webfile/AzureIOTPortal.zip?sp=r&st=2019-09-04T06:33:23Z&se=2019-09-05T14:33:23Z&spr=https&sv=2018-03-28&sig=Ffygo0ngVCuT8xrT5sZTcmuX%2BcZcHfNXh4dZ1mzH7fQ%3D&sr=b"
         }
