@@ -38,8 +38,14 @@
     "apiVersion": "2018-02-01",
     
     "location": "[parameters('location')]",
-    "tags": {}
+    "tags": {},
+    "properties": {
+      "serverFarmId": "[resourceId(Microsoft.Web/serverfarms,parameters('serverfarmName'))]"
+
+    
+    }
     },
+   
     
   {
     "name": "[concat(parameters('webAppName'),'/MsDeploy')]",
