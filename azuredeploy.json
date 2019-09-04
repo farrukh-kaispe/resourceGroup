@@ -40,7 +40,7 @@
     "location": "[parameters('location')]",
     "tags": {},
     "properties": {
-      "serverFarmId": "Serverfarm"
+     
     }
     },
     
