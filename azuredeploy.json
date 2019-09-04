@@ -19,7 +19,6 @@
     },
 "resources":[
 {
-    "name": "[parameters('serverfarmName')]",
     "type": "Microsoft.Web/serverfarms",
     "apiVersion": "2018-02-01",
     "kind": "string",
