@@ -75,7 +75,7 @@
         "type": "Microsoft.Web/sites/extensions",
         "apiVersion": "2018-02-01",
     
-        "location": "[parameters('location')]",
+        "location": "[resourceGroup().location]",
         "tags": {},
         "properties": {
           "addOnPackages":[
