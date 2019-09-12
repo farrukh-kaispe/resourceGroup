@@ -286,7 +286,7 @@
         },
 
         {
-            "name": "connectionstrings",
+            "name": "variables('iotHubName')",
             "type": "config",
             "apiVersion": "2015-08-01",
             "properties": "[variables('iotHubName').connectionStrings.prod]"
