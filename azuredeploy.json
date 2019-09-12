@@ -296,9 +296,9 @@
     "outputs": {
         "webAppURL" : {
           
-          "type" : "string",
-          "value": "variables('webAppName')"
-        }
+            "type" : "string",
+            "value": "[resourceId('Microsoft.Web/sites',variables('webAppName')),'2015-08-01-preview').portalUrl]"
+          }
       }
       
 }
