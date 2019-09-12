@@ -290,7 +290,7 @@
         "webAppURL" : {
           
             "type" : "string",
-            "value": "[resourceId('Microsoft.Web/sites',variables('webAppName')),'2015-08-01-preview').portalUrl]"
+            "value": "[reference(resourceId('Microsoft.Web/sites',variables('webAppName')),'2015-08-01-preview').portalUrl]"
           }
       }
       
