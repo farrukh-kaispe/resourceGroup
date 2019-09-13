@@ -293,7 +293,7 @@
             "name": "[concat(variables('webAppName'),'/MsDeploy')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/servarfarm',variables('appServiceName'))]"
+                "[resourceId('Microsoft.Web/serverfarms',variables('appServiceName'))]"
             ],
             "tags": {},
             "properties": {
