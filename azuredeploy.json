@@ -265,7 +265,21 @@
             "properties": {
                 "name": "[variables('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServiceName'))]"
-            }
+            },
+            "resources": [
+                {
+                  "apiVersion": "2015-08-01",
+                  "name": "web",
+                  "type": "config",
+                  "dependsOn": [
+                    "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
+                  
+                  ], 
+                  "properties": {
+                    "webSocketsEnabled": true,
+                    "alwaysOn": false
+                    }
+                
         },
         {
             "type": "Microsoft.Web/sites/extensions",
@@ -274,7 +288,7 @@
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/sites',variables('webAppName'))]",
-                "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
+                
             ],
             "tags": {},
             "properties": {
