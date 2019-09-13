@@ -265,26 +265,7 @@
             "properties": {
                 "name": "[variables('webAppName')]",
                 "serverFarmId": "[resourceId('Microsoft.Web/serverfarms', variables('appServiceName'))]"
-            },
-            "resources": [
-                {
-                  "name": "connectionstrings",
-                  "type": "config",
-                  "apiVersion": "2015-08-01",
-                  
-                  "tags": {
-                    "displayName": "ConnectionString"
-                  },
-                  "properties": {
-        
-                    "storage": {
-                      "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]",
-                      "type": "Custom"
-                    }
-        
-                  }
-                }
-              ]
+            }
         },
         {
             "type": "Microsoft.Web/sites/extensions",
@@ -302,7 +283,29 @@
                     }
                 ]
                 
-            }
+            },
+            
+            "resources": [
+                {
+                  "name": "connectionstrings",
+                  "type": "config",
+                  "apiVersion": "2015-08-01",
+                  "dependsOn": [
+                    "[concat('Microsoft.Web/sites/extensions', variables('webAppName'))]"
+                  ],
+                  "tags": {
+                    "displayName": "ConnectionString"
+                  },
+                  "properties": {
+        
+                    "storage": {
+                      "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]",
+                      "type": "Custom"
+                    }
+        
+                  }
+                }
+              ]
 
             
             
