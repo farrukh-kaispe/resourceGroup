@@ -270,10 +270,10 @@
                   "type": "config",
                   "apiVersion": "2015-08-01",
                   "dependsOn": [
-                    "[concat('Microsoft.Web/sites/', variables('webSiteName'))]"
+                    "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
                   ],
                   "tags": {
-                    "displayName": "tomConnectionString"
+                    "displayName": "ConnectionString"
                   },
                   "properties": {
         
