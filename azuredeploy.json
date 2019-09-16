@@ -300,11 +300,11 @@
             }
           },
           {
-            "name": "connectionstrings",
-            "type": "config",
+            "name": "[concat(variables('webAppName'), '/config')]",
+            "type": "Microsoft.Web/sites/config",
             "apiVersion": "2015-08-01",
             "dependsOn": [
-              "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
+             "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
             ],
             "tags": {
               "displayName": "WebAppConnectionStrings"
