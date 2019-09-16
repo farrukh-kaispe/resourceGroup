@@ -271,6 +271,10 @@
                   "apiVersion": "2015-08-01",
                   "type": "config",
                   "name": "[variables('webAppName')]",
+                  "dependsOn": [
+                    "[resourceId('Microsoft.Web/sites/', variables('webAppName'))]"
+                  
+                  ], 
                   "properties": {
                     "webSocketsEnabled": true,
                     "alwaysOn": false,
