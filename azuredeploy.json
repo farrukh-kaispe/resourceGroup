@@ -285,11 +285,12 @@
                     }
                     
                 
+        }
+        ]
         },
-
         {
             "name": "msdeploy",
-            "type": "extensions",
+            "type": "Microsoft.Web/sites/extensions",
             "location": "[parameters('location')]",
             "apiVersion": "2015-08-01",
             "dependsOn": [
@@ -307,9 +308,7 @@
                 
             }  
           }
-         
-        ]
-        }
+        
         
         
         
