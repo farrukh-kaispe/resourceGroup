@@ -306,14 +306,14 @@
             "type": "config",
             "apiVersion": "2015-08-01",
             "dependsOn": [
-              "[concat('Microsoft.Web/sites/', parameters('WebAppName'))]"
+              "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
             ],
             "tags": {
               "displayName": "WebAppConnectionStrings"
             },
             "properties": {
               "BlobConnection": {
-                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]",
+                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2018-07-01-preview').key1))]",
                 "type": "Custom"
               }
             }
