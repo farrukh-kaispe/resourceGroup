@@ -260,7 +260,7 @@
             "name": "[variables('webAppName')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Web/serverfarms', variables('appServiceName'),'/extensions/MSDeploy')]"
+                "[resourceId('Microsoft.Web/serverfarms', variables('appServiceName'))]"
             ],
             "properties": {
                 "name": "[variables('webAppName')]",
@@ -270,9 +270,9 @@
                 {
                   "apiVersion": "2015-08-01",
                   "name": "web",
-                  "type": "config",
+                  "type": "Microsoft.Web/sites/config",
                   "dependsOn": [
-                    "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
+                    "[concat('Microsoft.Web/sites/', variables('webAppName'),'/extensions/MSDeploy')]"
                   
                   ], 
                   "properties": {
