@@ -288,12 +288,12 @@
         },
 
         {
-            "name": "[concat(variables('webAppName'),'/msdeploy')]",
+            "name": "msdeploy",
             "type": "extensions",
             "location": "[parameters('location')]",
             "apiVersion": "2015-08-01",
             "dependsOn": [
-              "[resourceId('Microsoft.Web/sites/', '/msdeploy')]"
+              "[resourceId('Microsoft.Web/sites/', '/web')]"
             ],
             "tags": {
               "displayName": "WebAppMSDeploy"
