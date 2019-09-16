@@ -270,9 +270,9 @@
                 {
                   "apiVersion": "2015-08-01",
                   "type": "config",
-                  "name": "[concat(variables('webAppName'),'/config')]",
+                  "name": "[concat(variables('webAppName'),'/MSDeploy')]",
                   "dependsOn": [
-                    "[concat('Microsoft.Web/sites/', variables('webAppName'),'/config'))]"
+                    "[concat('Microsoft.Web/sites/', variables('webAppName'),'/MSDeploy'))]"
                   
                   ], 
                   "properties": {
@@ -293,7 +293,7 @@
             "location": "[parameters('location')]",
             "apiVersion": "2015-08-01",
             "dependsOn": [
-              "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
+              "[concat('Microsoft.Web/sites/', variables('webAppName'),'/MSDeploy')]"
             ],
             "tags": {
               "displayName": "WebAppMSDeploy"
