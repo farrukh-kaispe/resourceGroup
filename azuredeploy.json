@@ -282,10 +282,10 @@
                 
         },
 
-        {
+         {
             "type": "Microsoft.Web/sites/extensions",
             "apiVersion": "2018-02-01",
-            "name": "[concat(variables('webAppName'),'/MsDeploy')]",
+            "name": "MsDeploy",
             "location": "[parameters('location')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Web/sites','/MsDeploy')]"
@@ -300,7 +300,7 @@
                 
             }  
             
-        },
+        }
           {
             "name": "connectionstrings",
             "type": "config",
