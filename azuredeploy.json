@@ -260,7 +260,7 @@
             "name": "[variables('webAppName')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/serverfarms', variables('appServiceName'),'/extensions/MSDeploy')]"
+                "[concat('Microsoft.Web/serverfarms', variables('appServiceName'),'/extensions/MSDeploy')]"
             ],
             "properties": {
                 "name": "[variables('webAppName')]",
