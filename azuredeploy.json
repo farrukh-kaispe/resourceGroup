@@ -272,7 +272,7 @@
                   "name": "web",
                   "type": "config",
                   "dependsOn": [
-                    "[concat('Microsoft.Web/sites/', variables('webAppName'),'extensions/MSDeploy')]"
+                    "[concat('Microsoft.Web/sites/', variables('webAppName'),'/extensions/MSDeploy')]"
                   
                   ], 
                   "properties": {
