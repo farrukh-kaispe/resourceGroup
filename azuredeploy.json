@@ -288,7 +288,7 @@
         },
 
         {
-            "name": "msdeploy",
+            "name": "[concat(variables('webAppName'),'/msdeploy')]",
             "type": "extensions",
             "location": "[parameters('location')]",
             "apiVersion": "2015-08-01",
