@@ -277,8 +277,13 @@
                   ], 
                   "properties": {
                     "webSocketsEnabled": true,
-                    "alwaysOn": false
+                    "alwaysOn": false,
+                    "BlobConnection": {
+                        "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]",
+                        "type": "Custom"
+                      }
                     }
+                    
                 
         },
 
@@ -298,24 +303,8 @@
                         "packageUri": "https://kspwebstorageaccount.blob.core.windows.net/kspwebstoragecontainer/AzurePortal-10-sep.zip?sp=r&st=2019-09-11T04:37:16Z&se=2019-09-30T12:37:16Z&spr=https&sv=2018-03-28&sig=lCOTWZ82mqIhP7nMTjZEnZiU3%2FD2VlmCg6Z1DuHEreY%3D&sr=b"
                     
             }
-          },
-          {
-            "name": "[concat(variables('webAppName'), '/config')]",
-            "type": "Microsoft.Web/sites/config",
-            "apiVersion": "2015-08-01",
-            "dependsOn": [
-             "[concat('Microsoft.Web/sites/', variables('webAppName'))]"
-            ],
-            "tags": {
-              "displayName": "WebAppConnectionStrings"
-            },
-            "properties": {
-              "BlobConnection": {
-                "value": "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]",
-                "type": "Custom"
-              }
-            }
           }
+         
             ]
         }
         
