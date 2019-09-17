@@ -272,7 +272,7 @@
                   "type": "config",
                   "name": "web",
                   "dependsOn": [
-                    "[concat('Microsoft.Web/sites/', variables('webAppName'),/extensions/msdeploy)]"
+                    "[resourceId('Microsoft.Web/sites/', variables('webAppName'),/extensions/msdeploy)]"
                   
                   ], 
                   "properties": {
@@ -294,7 +294,8 @@
             "name": "[concat(variables('webAppName'),'/msdeploy')]",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Web/sites',variables('webAppName'))]"
+                "[concat('Microsoft.Web/sites',variables('webAppName'))]",
+                "[concat('DefaultEndpointsProtocol=https;AccountName=',variables('storageAccountName'),';AccountKey=',concat(listKeys(variables('storageAccountId'),'2015-05-01-preview').key1))]"
             ],
             "tags": {},
             "properties": {
