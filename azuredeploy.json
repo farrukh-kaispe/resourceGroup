@@ -295,7 +295,7 @@
             "name": "msdeploy",
             "location": "[parameters('location')]",
             "dependsOn": [
-                "[concat('Microsoft.Web/sites',variables('webAppName'))]"
+                "[concat('Microsoft.Web/sites/',variables('webAppName'))]"
             ],
             "tags": {},
             "properties": {
